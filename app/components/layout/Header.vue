@@ -169,7 +169,7 @@ onUnmounted(() => {
 })
 </script>
 
-<style>
+ <style lang="css">
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 .dancing-script {
   font-family: "Dancing Script", cursive;
@@ -189,3 +189,4 @@ transition: 1s;
 
 }
 </style>
+
