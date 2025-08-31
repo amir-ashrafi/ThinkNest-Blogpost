@@ -4,7 +4,7 @@
     <Header />
 
     <!-- محتوای صفحات -->
-    <main class="flex-1 container mx-auto px-4 py-8">
+    <main class="flex-1 container mx-auto px-4 py-32">
       <NuxtPage />
     </main>
 
@@ -25,7 +25,4 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-.container {
-  max-width: 1024px;
-}
 </style>

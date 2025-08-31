@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxt/eslint',
     '@nuxt/content',
-    '@nuxt/ui'
+    '@nuxt/ui',
+    'nuxt-icon'
   ],
 })

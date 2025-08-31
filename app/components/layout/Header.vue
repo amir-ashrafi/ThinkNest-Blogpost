@@ -4,7 +4,7 @@
     :class="isScroll ? 'bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-gray-900/70' : ''"
   >
     <!-- لوگو -->
-    <NuxtLink href="/" class="text-3xl text-amber-900 md:text-3xl md:hidden dancing-script">
+    <NuxtLink href="/" class="text-4xl text-amber-900 md:text-3xl md:hidden dancing-script">
       ThinkNest
     </NuxtLink>
     <!-- دکمه منو دستکاپ -->
@@ -58,7 +58,7 @@
     <!-- پروفایل / لاگین -->
   </nav>
   <button
-    class="md:hidden text-2xl text-amber-950 cursor-pointer"
+    class="md:hidden text-3xl text-amber-950 cursor-pointer"
     @click="toggleMenu"
   >
     ☰
