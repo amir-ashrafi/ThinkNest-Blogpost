@@ -6,7 +6,6 @@
     </p>
   </section>
 </template>
-
 <script setup>
 // میتونی اینجا داده یا فانکشن‌ها رو بذاری
 </script>

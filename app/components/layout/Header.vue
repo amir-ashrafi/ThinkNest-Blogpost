@@ -12,8 +12,9 @@
     class="hidden w-full md:flex max-w-[1300px]  justify-around"
     >
     <ul class="flex md:items-center">
-      <li v-for="(item,index) in munuItems" :key="index">
-        <NuxtLink :to="item.link" class="hover:underline button_menu">
+      <li v-for="(item,index) in munuItems"  class="mx-2 duration-100 transition-normal"   :class="activeItem == item.link?'font-bold border-b-2 py-3':'hover:border-b-2 py-3'" :key="index">
+        <NuxtLink :to="item.link" class=" button_menu" 
+        @click.prevent="handleMenuClick(item.link)">
           {{ item.name }}
         </NuxtLink>
       </li>
@@ -75,16 +76,12 @@
     </div>
     <ul class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 mt-10 md:mt-0">
       <li v-for="(item,index) in munuItems" :key="index">
-        <NuxtLink :to="item.link" class="hover:underline font-medium">
+        <NuxtLink :to="item.link" class="hover:underline font-medium " @click.prevent="handleMenuClick(item.link)">
           {{ item.name }}
         </NuxtLink>
       </li>
     </ul>
 
-    <!-- لوگو در وسط (فقط دسکتاپ) -->
-    <NuxtLink class="hidden md:block mx-6 dancing-script text-xl">
-      ThinkNest
-    </NuxtLink>
 
     <!-- بخش کتگوری -->
     <div class="my-4 md:my-0">
@@ -124,6 +121,7 @@
 
 <script setup>
 import { NuxtLink } from '#components'
+import { useRoute } from 'vue-router'
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const munuItems = [
@@ -156,7 +154,16 @@ const checkScreen = () => {
 }
 
 const isScroll = ref(false)
-
+const activeItem =ref(useRoute().path)
+const setActive = (link) =>{
+  activeItem.value = link
+}
+const handleMenuClick = (link) => {
+  if(!isDesktop.value){
+    showMenu.value = false
+  }
+  setActive(link)
+}
 onMounted(() => {
   checkScreen()
   window.addEventListener('resize', checkScreen)
@@ -180,13 +187,8 @@ margin: 0px 10px;
 font-size: 18px;
 font-weight: 400;
 border-bottom:2px oklch(0.987 0.022 95.277) solid ;
-}
-.button_menu:hover{
-text-decoration: none;
-border-bottom: 2px oklch(0.414 0.112 45.904) solid;
-animation: both;
-transition: 1s;
 
 }
+
 </style>
 
