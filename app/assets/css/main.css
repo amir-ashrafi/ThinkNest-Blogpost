@@ -45,7 +45,7 @@ border-radius: 10px;
 color:var(--color-amber-50);
 background-color: var(--color-amber-950);
 width: 100%;
-
+cursor: pointer;
 }
 .input_global{
   /* w-full relative flex */
@@ -64,6 +64,7 @@ width: 100%;
 /* focus:outline-none focus:ring focus:ring-amber-500 */
 .input_global input:focus{
  outline: none;
+ background-color: rgba(255, 255, 255, 0.568);
   border-color: var(--color-amber-800);       
   box-shadow: 0 0 0 1px var(--color-amber-300); 
 }
@@ -83,6 +84,7 @@ width: 100%;
 }
 .input_global textarea:focus{
    outline: none;
+    background-color: rgba(255, 255, 255, 0.568);
   border-color: var(--color-amber-800);       
   box-shadow: 0 0 0 1px var(--color-amber-300); 
 }

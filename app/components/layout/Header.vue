@@ -12,8 +12,8 @@
     class="hidden w-full md:flex max-w-[1300px]  justify-around"
     >
     <ul class="flex md:items-center">
-      <li v-for="(item,index) in munuItems"  class="mx-2 duration-100 transition-normal"   :class="activeItem == item.link?'font-bold border-b-2 py-3':'hover:border-b-2 py-3'" :key="index">
-        <NuxtLink :to="item.link" class=" button_menu" 
+      <li v-for="(item,index) in munuItems" :key="index" class="mx-2 duration-100 transition-normal"  :class="activeItem == item.link?'font-bold border-b-2 py-3':'hover:border-b-2 py-3'" >
+        <NuxtLink :to="item.link" :class="activeItem == item.link?'font-bold':'font-normal'" class=" button_menu" 
         @click.prevent="handleMenuClick(item.link)">
           {{ item.name }}
         </NuxtLink>
@@ -31,7 +31,7 @@
         New Post
       </NuxtLink>
       <div v-else>
-        <button @click="toggleCategories" class="flex items-center gap-1 cursor-pointer button_menu">
+        <button class="flex items-center gap-1 cursor-pointer button_menu hover:border-b-2 transition-transform duration-300 border-amber-900" @click="toggleCategories" >
           Categories
           <span v-if="showCategories">▲</span>
           <span v-else>▼</span>
@@ -40,17 +40,17 @@
       
       <ul v-if="showCategories" class="flex top-[70px] -translate-x-10 border-b-2 rounded-b-lg border-amber-800 gap-0 w-40 h-[245px] text-center
        fixed flex-col bg-amber-100/50 p-3  z-10">
-        <li v-for="(categori,index) in categories" class="border-b-2 pb-3 pt-2 border-white hover:border-amber-900/50 transition w-full " :key="index">
+        <li v-for="(categori,index) in categories" :key="index" class="border-b-2 pb-3 pt-2 border-white hover:border-amber-900/50 transition w-full " >
           <NuxtLink :to="`/${categori.value}`" class="">
             {{ categori.name }}
           </NuxtLink>
         </li>
       </ul>
-      <div class="flex items-center">
-        <NuxtLink v-if="!user" to="/login" class="hover:underline button_menu">
+      <div class="flex items-center hover:border-b-2 border-amber-900">
+        <NuxtLink v-if="!user" to="/login" class=" button_menu">
           Login / sign in
         </NuxtLink>
-        <NuxtLink v-else to="/profile" class="hover:underline">
+        <NuxtLink v-else to="/profile" class="">
           Profile
         </NuxtLink>
       </div>
@@ -85,18 +85,18 @@
 
     <!-- بخش کتگوری -->
     <div class="my-4 md:my-0">
-      <NuxtLink v-if="author" to="/new-post" class="hover:underline">
+      <NuxtLink v-if="author" to="/new-post" class="cursor-pointer">
         New Post
       </NuxtLink>
       <div v-else>
-        <button @click="toggleCategories" class="flex items-center gap-1">
+        <button class="flex  items-center gap-1 cursor-pointer font-medium" @click="toggleCategories" >
           Categories
           <span v-if="showCategories">▲</span>
           <span v-else>▼</span>
         </button>
       </div>
 
-      <ul v-if="showCategories" class="pl-4 mt-2 space-y-1">
+      <ul v-if="showCategories" class="pl-4 mt-2 space-y-1 font-normal">
         <li v-for="(categori,index) in categories" :key="index">
           <NuxtLink :to="`/${categori.value}`" class="hover:underline">
             {{ categori.name }}
@@ -107,7 +107,7 @@
 
     <!-- پروفایل / لاگین -->
     <div>
-      <NuxtLink v-if="!user" to="/login" class="hover:underline">
+      <NuxtLink v-if="!user" to="/login" class="font-medium">
         Login
       </NuxtLink>
       <NuxtLink v-else to="/profile" class="hover:underline">
@@ -185,8 +185,8 @@ onUnmounted(() => {
 padding: 10px 0px;
 margin: 0px 10px;
 font-size: 18px;
-font-weight: 400;
-border-bottom:2px oklch(0.987 0.022 95.277) solid ;
+
+
 
 }
 

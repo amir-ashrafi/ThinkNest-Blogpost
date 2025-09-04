@@ -1,5 +1,7 @@
 <template>
-
+<AuthForm mode="signin"/>
 </template>
-<script>
+<script setup>
+import AuthForm from '../Auth/AuthForm.vue';
+
 </script>

@@ -4,7 +4,7 @@
          <h1 class="">About</h1>   
          <p>We are a small passionate team.</p>
         </div>
-        <div class="flex gap-5 sm:gap-9 py-4 md:py-9 shadow-amber-50 shadow-2xs bg-amber-900/5 justify-around w-full">
+        <div class="flex gap-5 z-10 sm:gap-9 py-4 md:py-9 shadow-amber-50 shadow-2xs  justify-around w-full">
             <img
                 v-for="image in imageData"
                 :key="image.id"
@@ -13,6 +13,8 @@
                 :class="{ 'translate-y-[-30px]': image.id === 1 }" 
                 :alt="image.alt"
             />
+        </div>
+        <div class="absolute rounded-2xl w-full top-60 h-[300px]  bg-white/50">
         </div>
         <div class="flex  flex-col gap-8 mt-4 w-full max-w-[500px] lg:text-lg lg:max-w-[600px] text-center">
 

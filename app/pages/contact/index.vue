@@ -1,24 +1,24 @@
 <template>
   <div class="container justify-center items-center  flex flex-col md:mt-5">
-    <nav class="title_header">
+    <nav class="title_header md:pb-4 lg:pb-8">
       <h1 class="">Contact</h1>
       <p class="">We are here to help.</p>
     </nav>
     <div class="flex flex-col gap-4 mt-4 w-full max-w-[800px] md:flex-row">
-      <section id="section-left" class="flex border-b md:border-b-0 pb-8 md:border-r md:mr-3 border-amber-800 flex-col gap-3 basis-2/5 p-3">
+      <section id="section-left" class="flex pr-5 border-b md:border-b-0 pb-8 md:border-r md:mr-3 border-amber-800/50 flex-col gap-3 basis-2/5 p-3">
         <h2 class="text-xl font-medium text-amber-950 mb-2">Contact Stablo</h2>
         <p class="mb-4 font-sans text-amber-950">
           Have something to say? Fill up the form or send email or call phone.
         </p>
         <ul class="space-y-2 text-amber-900 font-medium">
           <li v-for="contact in contacts" :key="contact.type" class="flex items-center gap-2">
-            <Icon :icon="contact.icon" class="text-amber-700  w-5 h-5" />
+            <Icon :icon="contact.icon" class="text-amber-700 font-bold  w-5 h-5" />
             <span>{{ contact.text }}</span>
           </li>
         </ul>
       </section>
   
-      <form ref="form" @submit.prevent="sendEmail" class="flex flex-col w-full  gap-4 md:gap-6  text-amber-950 basis-3/5 my-3">
+      <form ref="form" class="flex flex-col w-full  gap-4 md:gap-6  text-amber-950 basis-3/5 my-3" @submit.prevent="sendEmail" >
         <div class="input_global relative">
           <input v-model="fullname" name="name" type="text" placeholder="Enter your name . . ." required class="w-full" />
           <label for="name">FullName</label>
