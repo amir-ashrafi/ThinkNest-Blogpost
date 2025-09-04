@@ -1,11 +1,11 @@
 <template>
   <div class="container justify-center items-center  flex flex-col md:mt-5">
-    <nav class="flex flex-col justify-center items-center">
-      <h1 class="text-3xl font-semibold text-amber-950">Contact</h1>
-      <p class="text-amber-900 font-light">We are here to help.</p>
+    <nav class="title_header">
+      <h1 class="">Contact</h1>
+      <p class="">We are here to help.</p>
     </nav>
-    <div class="flex flex-col gap-4 mt-4 md:flex-row">
-      <section id="section-left" class=" basis-2/5 p-3">
+    <div class="flex flex-col gap-4 mt-4 w-full max-w-[800px] md:flex-row">
+      <section id="section-left" class="flex border-b md:border-b-0 pb-8 md:border-r md:mr-3 border-amber-800 flex-col gap-3 basis-2/5 p-3">
         <h2 class="text-xl font-medium text-amber-950 mb-2">Contact Stablo</h2>
         <p class="mb-4 font-sans text-amber-950">
           Have something to say? Fill up the form or send email or call phone.
@@ -18,11 +18,20 @@
         </ul>
       </section>
   
-      <form ref="form" @submit.prevent="sendEmail" class="flex flex-col gap-4 max-w-md text-amber-950 basis-3/5 mt-3">
-      <input v-model="fullname" name="name" type="text" placeholder="Full Name" required class="border border-amber-400  placeholder:text-amber-800  p-2 rounded" />
-      <input v-model="email" name="title" type="email" placeholder="Email" required class="border border-amber-400 p-2 placeholder:text-amber-800 rounded" />
-      <textarea v-model="message" name="message" placeholder="Massage" required class="border border-amber-400 placeholder:text-amber-800 p-2 rounded"></textarea>
-      <button type="submit" class="bg-amber-500 hover:bg-amber-600 text-amber-50 p-2 cursor-pointer rounded">
+      <form ref="form" @submit.prevent="sendEmail" class="flex flex-col w-full  gap-4 md:gap-6  text-amber-950 basis-3/5 my-3">
+        <div class="input_global relative">
+          <input v-model="fullname" name="name" type="text" placeholder="Enter your name . . ." required class="w-full" />
+          <label for="name">FullName</label>
+        </div>
+        <div class="input_global w-full">
+          <label for="message">Email</label>
+          <input v-model="email" name="title" type="email" placeholder="you@example.com" required class="w-full" />
+        </div>
+        <div class="input_global">
+          <label for="message">Massage</label>
+          <textarea v-model="message" name="message" placeholder="Type your text here . . ." required class="w-full"></textarea>
+        </div>
+      <button type="submit" class="button_global">
         Send Message
       </button>
   </form>

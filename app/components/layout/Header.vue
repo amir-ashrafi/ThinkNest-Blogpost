@@ -1,7 +1,7 @@
 <template>
   <header
     class="w-full fixed top-0 sm:px-10 left-0 items-baseline z-50 px-6 lg:px-8 rounded-b-lg lg:justify-center xl:px-[8%] text-amber-900 py-6 flex justify-between transition-all duration-300 bg-amber-50"
-    :class="isScroll ? 'bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-gray-900/70' : ''"
+    :class="isScroll ? 'bg-amber-100/50 bg-opacity-50 backdrop-blur-lg shadow-sm' : ''"
   >
     <!-- لوگو -->
     <NuxtLink href="/" class="text-4xl text-amber-900 md:text-3xl md:hidden dancing-script">

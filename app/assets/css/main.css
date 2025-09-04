@@ -1,1 +1,98 @@
 @import "tailwindcss";
+
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px var(--color-amber-50) inset !important; /* بک‌گراند رو سفید می‌کنه */
+  -webkit-text-fill-color: #000 !important;          /* رنگ متن */
+  transition: background-color 5000s ease-in-out 0s; /* جلوگیری از تغییر ناگهانی */
+}
+
+/* فایرفاکس */
+input:-moz-autofill {
+  box-shadow: 0 0 0px 1000px var(--color-amber-50) inset !important;
+  -moz-text-fill-color: #000 !important;
+}
+.title_header {
+  display: flex;
+  flex-direction: column;
+  margin-block: calc(var(--spacing) * 5);
+  gap: calc(var(--spacing) * 2);
+  justify-content: center;
+  align-items: center;
+}
+
+.title_header h1 {
+  font-size: var(--text-3xl);
+  line-height: var(--tw-leading, var(--text-3xl--line-height));
+  --tw-font-weight: var(--font-weight-medium); /* 500 */
+  font-weight: var(--font-weight-medium); /* 500 */
+  color: var(--color-amber-950); /* oklch(27.9% 0.077 45.635) = #461901 */
+}
+
+.title_header p {
+  color: var(--color-amber-900); /* معادل text-amber-900 در Tailwind */
+  font-weight: 400; /* معادل font-light در Tailwind */
+  font-size: 1rem; /* پایه */
+}
+.button_global{
+padding: 12px 26px;
+font-size: medium;
+font-weight: 600;
+border-radius: 10px;
+color:var(--color-amber-50);
+background-color: var(--color-amber-950);
+width: 100%;
+
+}
+.input_global{
+  /* w-full relative flex */
+  width: 100%;
+  position:relative ;
+  display: flex;
+}
+.input_global input{
+  /* bg-amber-50 px-5 border-2 border-amber-950/30 py-3 rounded-lg */
+  background-color: var(--color-amber-50);
+  border: 2px solid;
+  border-color: color-mix(in oklab, var(--color-amber-950));
+  padding: calc(var(--spacing) * 3);
+  border-radius: var(--radius-lg)
+}
+/* focus:outline-none focus:ring focus:ring-amber-500 */
+.input_global input:focus{
+ outline: none;
+  border-color: var(--color-amber-800);       
+  box-shadow: 0 0 0 1px var(--color-amber-300); 
+}
+.input_global label{
+  /* absolute -top-3 left-2  bg-amber-50 */
+  position: absolute;
+  top: calc(var(--spacing) * -3);
+  left: calc(var(--spacing) * 2);
+  background-color: var(--color-amber-50);
+}
+.input_global textarea{
+  background-color: var(--color-amber-50);
+  border: 2px solid;
+  border-color: color-mix(in oklab, var(--color-amber-950));
+  padding: calc(var(--spacing) * 3);
+  border-radius: var(--radius-lg)
+}
+.input_global textarea:focus{
+   outline: none;
+  border-color: var(--color-amber-800);       
+  box-shadow: 0 0 0 1px var(--color-amber-300); 
+}
+/* 📌 در سایز md (768px به بالا) */
+@media (min-width: 768px) {
+  .title_header h1 {
+    font-size: var(--text-4xl); /* بزرگتر از text-3xl */
+  }
+
+  .title_header p {
+    font-size: 1.125rem; /* بزرگتر از 1rem */
+  }
+}

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex flex-col bg-gray-50 text-gray-900">
+  <div class="min-h-screen flex flex-col bg-amber-50 text-amber-950">
     <!-- هدر سایت -->
     <Header />
 

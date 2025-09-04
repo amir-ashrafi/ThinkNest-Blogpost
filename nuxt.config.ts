@@ -25,4 +25,9 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     'nuxt-icon'
   ],
+  image: {
+    // استفاده از public/ به عنوان مسیر محلی
+    dir: 'public',
+    provider: 'ipx'
+  }
 })
